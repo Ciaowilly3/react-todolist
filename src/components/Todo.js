@@ -1,7 +1,24 @@
 import React from 'react'
 
-export const Todo = () => {
+export const Todo = ({todo, toggleComplete}) => {
+  console.log(todo)
   return (
-    <div>Todo</div>
+    <div className={`${todo.completed? ' bg-success ' : ''} ` + ' border rounded my-3 p-3'}>
+      <div>
+        <h6 className='text-start'>{todo.task.title}</h6>
+      </div>
+      <div>
+        <p className='text-start'>
+          {todo.task.description}
+        </p>
+      </div>
+      <div className='d-flex justify-content-between align-items-center'>
+        <span>{todo.task.author}</span>
+        <button className='btn btn-secondary px-3'
+        onClick={() => toggleComplete(todo.id)}>
+          Done
+      </button>
+      </div>
+    </div>
   )
 }

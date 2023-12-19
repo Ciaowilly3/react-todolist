@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
+import "../style-components/TodoFormStyle.css"
 
-export const TodoForm = () => {
+export const TodoForm = ({addTodo}) => {
   const [task , setTask] = useState({
     "title": "",
     "description" : "",
     "author": "",
-    "priority": "",
+    "priority": "none",
   });
 
   const handleChange = (e) =>{
@@ -20,28 +21,36 @@ export const TodoForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    console.log(task);
+    addTodo(task);
+
+    setTask({
+      "title": "",
+      "description" : "",
+      "author": "",
+      "priority": "none",
+    });
+  
   }
   return (
-    <div>
+    <div className='form-container'>
       <h2 className='fw-bolder'>Create task</h2>
        <form onSubmit={handleSubmit}>
 
-          <input type="text" className='form-control w-100 my-3' placeholder='Title'
+          <input type="text" className='my-form-control w-100 my-3' placeholder='Title'
           value={task.title} name='title'
           onChange={handleChange}/>
 
-          <input type="text" className='form-control w-100 my-3' placeholder='Description'
-          value={task.descrption} name='description'
+          <input type="text" className='my-form-control w-100 my-3' placeholder='Description'
+          value={task.description} name='description'
           onChange={handleChange}/>
 
-          <input type="text" className='form-control w-100 my-3' placeholder='Author'
+          <input type="text" className='my-form-control w-100 my-3' placeholder='Author'
           value={task.author} name='author'
           onChange={handleChange}/>
 
-          <select className='form-control my-3'
-          name="priority" value={task.priority} onChange={handleChange}>
-            <option key="none" disabled hidden>Priority</option>
+          <select className='my-form-control my-3'
+          name="priority" value={task.priority}  onChange={handleChange}>
+            <option key="none" hidden >Priority</option>
             <option value="high" key="high">high</option>
             <option value="medium" key="medium">medium</option>
             <option value="low" key="low">low</option>

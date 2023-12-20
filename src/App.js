@@ -3,8 +3,10 @@ import { TodoWrapper } from './components/TodoWrapper';
 
 function App() {
   return (
-    <div className="App container">
-     <TodoWrapper />
+    <div className="App">
+      <div className='container'>
+        <TodoWrapper />
+      </div>
     </div>
   );
 }

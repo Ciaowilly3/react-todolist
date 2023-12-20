@@ -34,7 +34,7 @@ export const TodoWrapper = () => {
         </div>
         {!showTodoForm && (
         <div className='w-100 position-relative'>
-          <TodoForm addTodo={addTodo}></TodoForm>
+          <TodoForm addTodo={addTodo} toggleTodoForm={toggleTodoForm}></TodoForm>
         </div>
         )}
         {todos.map((todo, index) => (

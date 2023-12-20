@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import "../style-components/TodoFormStyle.css"
 
-export const TodoForm = ({addTodo}) => {
+export const TodoForm = ({addTodo, toggleTodoForm}) => {
   const [task , setTask] = useState({
     "title": "",
     "description" : "",
@@ -29,7 +29,8 @@ export const TodoForm = ({addTodo}) => {
       "author": "",
       "priority": "none",
     });
-  
+
+    toggleTodoForm();
   }
   return (
     <div className='form-container'>
@@ -56,7 +57,7 @@ export const TodoForm = ({addTodo}) => {
             <option value="low" key="low">low</option>
           </select>
           <div className='text-end'>
-            <button type='submit' className='btn btn-secondary'>Create</button>
+            <button type='submit' className='btn btn-secondary' >Create</button>
           </div>
        </form>
     </div>

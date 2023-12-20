@@ -1,7 +1,18 @@
 .red-bar{
+    background-color: rgb(210, 9, 9);
+}
+
+.yellow-bar{
+    background-color: yellow;
+}
+
+.green-bar{
+    background-color: limegreen;
+}
+
+.bar{
     flex-grow: 1;
     border-radius: 4px;
     height: 4px;
-    background-color: rgb(210, 9, 9);
     margin-left: 16px;
 }

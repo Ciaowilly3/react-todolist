@@ -56,7 +56,8 @@ export const TodoForm = ({addTodo, toggleTodoForm}) => {
             <option value="medium" key="medium">medium</option>
             <option value="low" key="low">low</option>
           </select>
-          <div className='text-end'>
+          <div className='d-flex justify-content-between pt-2'>
+            <button type='button' className='btn btn-danger' onClick={toggleTodoForm}>Delete</button>
             <button type='submit' className='btn btn-secondary' >Create</button>
           </div>
        </form>

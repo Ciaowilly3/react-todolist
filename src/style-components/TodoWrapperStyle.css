@@ -1,0 +1,8 @@
+@media screen and (min-width:768px){
+    .done{
+        min-width: 50%;
+    }
+    .todo{
+        min-width: 50%;
+    }
+}

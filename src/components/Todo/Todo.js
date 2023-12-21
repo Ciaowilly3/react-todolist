@@ -1,7 +1,7 @@
 import React from 'react'
-import "../style-components/TodoStyle.css"
+import "./Todo.css"
 
-export const Todo = ({todo, toggleComplete}) => {
+const Todo = ({todo, toggleComplete}) => {
   const setPriority = () =>{
     let colour = 'green-bar';
     if(todo.task.priority === 'high'){
@@ -25,7 +25,7 @@ export const Todo = ({todo, toggleComplete}) => {
       </div>
       <div className='d-flex justify-content-between align-items-center'>
         <span>Made by: {todo.task.author}</span>
-        <button className={'btn btn-secondary px-3 '+ `${todo.completed === true ? 'd-none': ''}`}
+        <button className={`btn btn-secondary px-3 ${todo.isCompleted === true ? 'd-none': ''}`}
         onClick={() => toggleComplete(todo.id)}>
           Done
       </button>
@@ -33,3 +33,4 @@ export const Todo = ({todo, toggleComplete}) => {
     </div>
   )
 }
+export default Todo;

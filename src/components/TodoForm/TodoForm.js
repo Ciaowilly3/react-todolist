@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import "../style-components/TodoFormStyle.css"
+import "./TodoForm.css"
 
-export const TodoForm = ({addTodo, toggleTodoForm}) => {
+const TodoForm = ({addTodo, toggleTodoForm}) => {
   const [task , setTask] = useState({
     "title": "",
     "description" : "",
@@ -64,3 +64,4 @@ export const TodoForm = ({addTodo, toggleTodoForm}) => {
     </div>
   )
 }
+export default TodoForm;

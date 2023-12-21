@@ -4,6 +4,7 @@ import TodoForm from '../TodoForm'
 import {v4 as uuidV4} from 'uuid';
 import Todo from '../Todo';
 import './TodoWrapper.css'
+import TodoList from '../TodoList';
 uuidV4();
 
 const TodoWrapper = () => {
@@ -41,21 +42,11 @@ const TodoWrapper = () => {
         <div className={`gap-3  ${todos.length === 0 ? 'd-none': 'd-md-flex'}`}>
           <div className='flex-grow-1 todo'>
             <h2 className='fw-bolder'>To Do</h2>
-            {todos
-              .filter(todo => !todo.isCompleted)
-              .map((todo, index) => (
-              <Todo todo={todo} key={index}
-              toggleComplete={toggleComplete}/>
-            ))}
+            <TodoList todos={todos.filter(todo => !todo.isCompleted)} toggleComplete={toggleComplete}/>
           </div>
           <div className='flex-grow-1 done'>
-          <h2 className='fw-bolder'>Done</h2>
-            {todos
-              .filter(todo => todo.isCompleted)
-              .map((todo, index) => (
-              <Todo todo={todo} key={index}
-              toggleComplete={toggleComplete}/>
-            ))}
+            <h2 className='fw-bolder'>Done</h2>
+            <TodoList todos={todos.filter(todo => todo.isCompleted)} toggleComplete={toggleComplete}/>
           </div>
         </div>
     </div>

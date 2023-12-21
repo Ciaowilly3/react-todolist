@@ -1,13 +1,16 @@
 import React from 'react'
 import Todo from '../Todo'
 
-const TodoList = (todos, toggleComplete) => {
+const TodoList = ({todos, toggleComplete}) => {
   return (
-    // {todos
-    //     .map((todo, index) => (
-    //     <Todo todo={todo} key={index}
-    //     toggleComplete={toggleComplete}/>
-    //   ))}
+    <div>
+    {
+    todos
+        .map((todo, index) => (
+        <Todo todo={todo} key={index}
+        toggleComplete={toggleComplete}/>
+      ))}
+    </div>
   )
 }
 
